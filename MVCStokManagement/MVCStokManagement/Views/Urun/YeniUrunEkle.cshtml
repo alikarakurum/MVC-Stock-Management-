@@ -1,0 +1,37 @@
+﻿
+@model MVCStokManagement.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YeniUrunEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div style="margin-top:10px">
+        <label>Ürün Adı</label>
+        @Html.TextBoxFor(m => m.UrunAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.UrunAD, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Ürün Markası</label>
+        @Html.TextBoxFor(m => m.UrunMARKA, new {@class="form-control"})
+        @Html.ValidationMessageFor(m => m.UrunMARKA, "", new {@style="color:red"})
+    </div>
+    <div style="margin-top:15px">
+        <label>Ürün Kategorisi</label>
+        @Html.DropDownListFor(m=> m.TBLKATEGORILER.KategoriID,(List<SelectListItem>)ViewBag.ktgrlr,new {@class="form-control"})
+    </div>
+    <div style="margin-top:15px">
+        <label>Ürün Fiyatı</label>
+        @Html.TextBoxFor(m => m.UrunFIYAT, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.UrunFIYAT, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Ürün Stok Adedi</label>
+        @Html.TextBoxFor(m => m.UrunSTOK, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.UrunSTOK, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info"> Ürün Ekle </button>
+    </div>
+</form>
+

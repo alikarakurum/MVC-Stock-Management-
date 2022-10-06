@@ -1,0 +1,31 @@
+﻿@using MVCStokManagement.Models.Entity
+@model List<TBLKATEGORILER>
+@{
+    ViewBag.Title = "KategoriIndex";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+    </tr>
+    <tbody>
+        @foreach(var ktgr in Model) 
+        {
+            <tr>
+                <td>@ktgr.KategoriID</td>
+                <td>@ktgr.KategoriAD</td>
+                <td>
+                    <a href="/KATEGORI/Sil/@ktgr.KategoriID" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="/KATEGORI/KategoriGuncelle/@ktgr.KategoriID" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/KATEGORI/YeniKategoriEkle" class="btn btn-primary">KATEGORİ EKLE</a>
+

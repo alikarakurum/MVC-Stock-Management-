@@ -1,0 +1,38 @@
+﻿@using MVCStokManagement.Models.Entity
+@model List<TBLSATISLAR>
+@{
+    ViewBag.Title = "SatisIndex";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Satış ID</th>
+            <th>Satış Ürün</th>
+            <th>Satış Müşteri</th>
+            <th>Satış Adedi</th>
+            <th>Satış Fiyatı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var satis in Model)
+        {
+            <tr>
+                <th>@satis.SatisID</th>
+                <td>@satis.SatisURUN</td>
+                <td>@satis.SatisMUSTERI</td>
+                <td>@satis.SatisADET</td>
+                <td>@satis.SatisFIYAT</td>
+                <td>
+                    <a href="/SATIS/SIL/@satis.SatisID" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="/SATIS/GUNCELLE/@satis.SatisID" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/SATIS/YeniSatisEkle" class="btn btn-primary">SATIŞ EKLE</a>
+

@@ -1,0 +1,29 @@
+﻿@model MVCStokManagement.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "UrunGuncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+            {
+                <form class="form-group" method="post">
+                    @Html.LabelFor(m => m.UrunAD)
+                    @Html.TextBoxFor(m => m.UrunAD, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(m => m.UrunMARKA)
+                    @Html.TextBoxFor(m => m.UrunMARKA, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(m => m.UrunKATEGORI)
+                    @Html.DropDownListFor(m => m.TBLKATEGORILER.KategoriID, (List<SelectListItem>)ViewBag.ktgrlr, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(m => m.UrunFIYAT)
+                    @Html.TextBoxFor(m => m.UrunFIYAT, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(m => m.UrunSTOK)
+                    @Html.TextBoxFor(m => m.UrunSTOK, new { @class = "form-control" })
+                <div style="margin-top:10px">
+                    <button class="btn btn-group"> Ürün Güncelle </button>
+                </div>
+                </form>
+            }
+

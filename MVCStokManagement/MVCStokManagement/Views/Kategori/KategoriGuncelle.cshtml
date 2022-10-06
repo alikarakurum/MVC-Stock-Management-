@@ -1,0 +1,20 @@
+﻿
+@model MVCStokManagement.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "KategoriGuncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.KategoriID)
+        @Html.TextBoxFor(m => m.KategoriID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.KategoriAD)
+        @Html.TextBoxFor(m => m.KategoriAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-group"> Kategori Güncelle</button>
+    </div>
+    }

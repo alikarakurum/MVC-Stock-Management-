@@ -1,0 +1,17 @@
+﻿
+@model MVCStokManagement.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "YeniKategoriEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form form-group" method="post">
+    <div style="margin-top:10px">
+        @Html.TextBoxFor(m => m.KategoriAD, new {@class="form-control"})
+        @Html.ValidationMessageFor(m => m.KategoriAD, "", new {@style="color:red"})
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info"> Kategori Ekle</button>
+    </div>
+</form>
+
